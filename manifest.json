@@ -1,7 +1,7 @@
 {
   "name": "Sistem PHO Lapangan",
   "short_name": "PHO Lapangan",
-  "description": "Aplikasi Upload Foto Lapangan Disdikbud Karanganyar",
+  "description": "Aplikasi Upload Foto Lapangan",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0a0a0c",
@@ -9,12 +9,12 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Camera_Icon.svg/192px-Camera_Icon.svg.png",
+      "src": "https://via.placeholder.com/192/0a0a0c/00f0ff?text=PHO",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Camera_Icon.svg/512px-Camera_Icon.svg.png",
+      "src": "https://via.placeholder.com/512/0a0a0c/00f0ff?text=PHO",
       "sizes": "512x512",
       "type": "image/png"
     }
