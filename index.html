@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <!-- Mencegah user melakukan zoom in/out agar terasa seperti aplikasi asli -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  
+  <title>Aplikasi PHO Lapangan</title>
+  
+  <!-- Link ke file manifest PWA -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Warna tema untuk status bar Android -->
+  <meta name="theme-color" content="#0a0a0c">
+  
+  <!-- Icon untuk iOS Apple -->
+  <link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Camera_Icon.svg/1024px-Camera_Icon.svg.png">
+
+  <style>
+    /* Reset margin & padding agar iframe penuh 100% layar */
+    body, html { 
+        margin: 0; 
+        padding: 0; 
+        height: 100vh; 
+        width: 100vw;
+        overflow: hidden; 
+        background-color: #0a0a0c; 
+    }
+    iframe { 
+        width: 100%; 
+        height: 100%; 
+        border: none; 
+        display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- GANTI URL SRC DI BAWAH INI DENGAN URL DEPLOY GAS BAPAK -->
+  <iframe src="https://script.google.com/macros/s/AKfycbzUsASce9TAK61_3KtToEwchIywr_VAYkjVefIT1_U-P92uIKfQZUxKMrL8ueBoHQP9AQ/exec" allow="camera"></iframe>
+
+  <!-- Script Registrasi Service Worker (Syarat Wajib PWA) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      // Kita buat service worker virtual (dummy) agar Chrome memunculkan tombol Install PWA
+      const swCode = `
+        self.addEventListener('install', (e) => { self.skipWaiting(); });
+        self.addEventListener('activate', (e) => { e.waitUntil(clients.claim()); });
+        self.addEventListener('fetch', (e) => { }); // Dummy fetch
+      `;
+      
+      const blob = new Blob([swCode], {type: 'application/javascript'});
+      const swUrl = URL.createObjectURL(blob);
+      
+      navigator.serviceWorker.register(swUrl)
+        .then(() => console.log('PWA Service Worker Terdaftar'))
+        .catch(err => console.log('Service Worker Gagal', err));
+    }
+  </script>
+
+</body>
+</html>
