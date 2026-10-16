@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pho-lapangan-v1';
+const CACHE_NAME = 'uplink-smp-v1';
 const ASSETS = [
   './',
   './index.html',
