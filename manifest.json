@@ -1,6 +1,6 @@
 {
   "name": "Sistem PHO Lapangan",
-  "short_name": "PHO Lapangan",
+  "short_name": "Uplink SMP",
   "description": "Aplikasi Upload Foto Lapangan",
   "start_url": "./index.html",
   "display": "standalone",
